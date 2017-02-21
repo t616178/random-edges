@@ -33,6 +33,8 @@ public class Random {
         final String filePath = args[2];
         final double[] probabilities = new Constants().rmatProbabilities;
 
+	System.out.println("Writing " + numEdges + " to " + filePath + ".");
+
         final RandomElementGenerator generator = new RandomElementGenerator(numEntities, numEdges, probabilities);
 
         final FileWriter fileWriter = new FileWriter(filePath, true);
@@ -53,7 +55,6 @@ public class Random {
                          } catch (IOException e1) {
                              e1.printStackTrace();
                          }
-                         System.out.println(sb.toString());
                      });
 
         writer.close();
